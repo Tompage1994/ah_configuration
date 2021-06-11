@@ -28,6 +28,7 @@ repos:
         always_run: true
         entry: >-
           ansible-lint -vp -c .github/workflow-config/.ansiblelint.yml
+            --exclude=.github/workflows/
 #          --exclude=temp_test_module.yml
 #          --exclude=playbooks/testing_playbook.yml
 #          --exclude=playbooks/ah_configs/
