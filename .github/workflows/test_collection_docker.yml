@@ -21,7 +21,7 @@ jobs:
       # https://github.com/ansible/galaxy_ng/wiki/Development-Setup
 
       - name: Development Setup
-        run:
+        run: |
           cd .github
           git clone git@github.com:pulp/pulplift.git
           git clone git@github.com:pulp/pulp_ansible.git
