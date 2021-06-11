@@ -21,27 +21,25 @@ jobs:
       # https://github.com/ansible/galaxy_ng/wiki/Development-Setup
 
       - name: Development Setup
-        uses: oxr463/setup-vagrant
-        with:
-          exec: |
-            cd .github
-            git clone git@github.com:pulp/pulplift.git
-            git clone git@github.com:pulp/pulp_ansible.git
-            git clone git@github.com:pulp/pulp_container.git
-            git clone git@github.com:pulp/pulpcore.git
-            git clone git@github.com:ansible/galaxy_ng.git
-            git clone git@github.com:ansible/galaxy-importer.git
-            git clone git@gist.github.com:3e181f7931d12068cd09b9dde3a2c09e.git example
-            cd pulplift
-            git submodule update --init
-            cp ../example/* .
-            cd pulp_installer
-            git checkout master
-            git pull --rebase
-            pip install --user ansible
-            ansible-galaxy collection install ansible.galaxy_collection -p ./collections
-            vagrant up pulp3-source-fedora31
-            ansible-playbook galaxy-config.yml --extra-vars "@local.dev-config.yml" -l pulp3-source-fedora31
+        run:
+          cd .github
+          git clone git@github.com:pulp/pulplift.git
+          git clone git@github.com:pulp/pulp_ansible.git
+          git clone git@github.com:pulp/pulp_container.git
+          git clone git@github.com:pulp/pulpcore.git
+          git clone git@github.com:ansible/galaxy_ng.git
+          git clone git@github.com:ansible/galaxy-importer.git
+          git clone git@gist.github.com:3e181f7931d12068cd09b9dde3a2c09e.git example
+          cd pulplift
+          git submodule update --init
+          cp ../example/* .
+          cd pulp_installer
+          git checkout master
+          git pull --rebase
+          pip install --user ansible
+          ansible-galaxy collection install ansible.galaxy_collection -p ./collections
+          vagrant up pulp3-source-fedora31
+          ansible-playbook galaxy-config.yml --extra-vars "@local.dev-config.yml" -l pulp3-source-fedora31
 
       - name: "Perform playbook tests"
         run: ansible-playbook playbooks/testing_playbook.yml
