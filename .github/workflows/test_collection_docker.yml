@@ -29,7 +29,7 @@ jobs:
           git clone https://github.com/pulp/pulpcore.git
           git clone https://github.com/ansible/galaxy_ng.git
           git clone https://github.com/ansible/galaxy-importer.git
-          git clone git@gist.github.com:3e181f7931d12068cd09b9dde3a2c09e.git example
+          git clone https://gist.github.com/3e181f7931d12068cd09b9dde3a2c09e.git example
           cd pulplift
           git submodule update --init
           cp ../example/* .
