@@ -6,7 +6,7 @@ on: [push, pull_request]  # yamllint disable-line rule:truthy
 jobs:
   Integration-test:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-10.15
 
     steps:
       - name: "Checkout Project"
