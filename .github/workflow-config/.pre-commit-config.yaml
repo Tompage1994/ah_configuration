@@ -41,7 +41,7 @@ repos:
         entry: flake8
         args: [--config=.github/workflow-config/flake8.cfg]
         types: [python]
-  - repo: github.com/markdownlint/markdownlint
+  - repo: https://github.com/markdownlint/markdownlint
     rev: 4.0.1
     hooks:
       - id: markdownlint
