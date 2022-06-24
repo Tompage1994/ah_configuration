@@ -45,7 +45,6 @@ repos:
     rev: v0.11.0
     hooks:
       - id: markdownlint
-        name: markdownlint
-        entry: markdownlint
+        name: Markdownlint
         args: [--style=.github/workflow-config/markdownlint.rb, --git-recurse]
 ...
