@@ -41,6 +41,16 @@
 
     - name: Perform tasks for collection repositories
       block:
+        - name: Collection Repository creation
+          ansible.builtin.include_role:
+            name: collection_repository
+          vars:
+            ah_collection_repositories:
+              - name: community-infra-repo-alone
+                description: "description of community-infra repository"
+                distribution:
+                  state: present
+
         - name: Collection Remote creation
           ansible.builtin.include_role:
             name: collection_remote

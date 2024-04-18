@@ -41,6 +41,7 @@ ah_collection_repositories:
     pulp_labels:
       pipeline: "approved"
     distribution:
+      name: noremote-distro
       state: present
   - name: community-infra-repo-nothing
     description: "description of community-infra repository"

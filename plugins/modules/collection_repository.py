@@ -144,6 +144,8 @@ from ..module_utils.ah_pulp_object import (
     AHPulpAnsibleRemote,
 )
 
+import time
+
 
 def main():
     # Any additional arguments that are not fields of the item can be added here
@@ -247,6 +249,7 @@ def main():
     if distro:
         if not ansible_distro.exists:
             if distro_state == "present":
+                time.sleep(3)
                 ansible_distro.create(
                     new_item={
                         "base_path": distro_name,
